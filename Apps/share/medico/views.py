@@ -12,7 +12,7 @@ def traerAgendaMedico(request):
     dataRequestUsername=dic['username']
 
     with connection.cursor() as cursor:
-        cursor.execute("""SELECT paciente.username, cita.fecha, cita.id_cita, cita.estado, horario.hora_inicio, horario.hora_fin
+        cursor.execute("""SELECT paciente.username, agenda.id_agenda, paciente.id_usuario, horario.id_horario cita.fecha, cita.id_cita, cita.estado, horario.hora_inicio, horario.hora_fin
                         FROM paciente
                         JOIN cita ON (paciente.id_usuario = cita.id_usuario)
                         JOIN horario ON (cita.id_horario = horario.id_horario)
