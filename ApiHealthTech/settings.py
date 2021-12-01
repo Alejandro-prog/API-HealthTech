@@ -42,6 +42,8 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
     "username",
+    "id_agenda",
+    "fecha",
 ] 
 
 CORS_ALLOW_METHODS = [
@@ -212,7 +214,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
 }
-
 
 REST_KNOX = {
   'USER_SERIALIZER': 'knox.serializers.UserSerializer',
